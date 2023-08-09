@@ -23,8 +23,10 @@
         - 로그인 되지 않은 사용자가 로그인 페이지로 가려고 할때, 로그인 값을 검사해서 로그인 되지 않았으면, 강제로 로그인 화면으로 이동시킬 때 사용
         -페이지 이동 함수의 매개변수에 '-1'을 넣으면 뒤로 가기
         - ex.
-        ``` const navigate = useNavigate();
-            <button onClick={() => {navigate('/home')} >홈으로 이동</button> ```
+        ```
+        const navigate = useNavigate();
+        <button onClick={() => {navigate('/home')} >홈으로 이동</button>
+        ```
         
 
 ## JavaScript
