@@ -1,5 +1,6 @@
 # emotion-diary
-
+    - winterlood 이정환님 강의 내용을 바탕으로 공부한 내용입니다.
+    - 출처 : 한입크기로 잘라먹는 리액트 - 이정환(winterlood)
 ## Study
 
 ## React
@@ -23,11 +24,42 @@
         - 로그인 되지 않은 사용자가 로그인 페이지로 가려고 할때, 로그인 값을 검사해서 로그인 되지 않았으면, 강제로 로그인 화면으로 이동시킬 때 사용
         -페이지 이동 함수의 매개변수에 '-1'을 넣으면 뒤로 가기
         - ex.
-        ``` const navigate = useNavigate();
-            <button onClick={() => {navigate('/home')} >홈으로 이동</button> ```
+        ```
+        const navigate = useNavigate();
+        <button onClick={() => {navigate('/home')}} >홈으로 이동</button>
+        ```
         
+## 프로젝트 기초공사 1 (2023-08-15, 화)
+1. 폰트 세팅(폰트 사용 시 라이센스 확인 필수!)
+    - 구글 폰트 사용(nanum pen script / yeon sung) => 구글폰트 웹사이트에서 선택
+    - @import로 변경하여, <style>내용만 복사</style> - App.css 최상단에 붙여넣기
+    - CSS rules 복사하여, .App {붙여넣기} > font-family 속성은 가장 뒤에 적힌 속성을 따른다. 단, 같은 라인에 여러 폰트가 있는 경우에는 가장 왼쪽 속성을 따른다.
 
-## JavaScript
+2. 레이아웃 세팅
+    - 모든페이지에 반영되는 레이아웃을 세팅한다.
+    - 모든 페이지에 공통적으로 적용되는 레이아웃(뒷배경 색상, 실제 서비스가 사용하는 면적, 폰트 등)
+    - @media 키워드를 이용해서 특정 조건을 만족했을 때 적용되는 css 속성을 정의할 수 있다.
+    - ex. @media(min-width: 600px){최소 너비가 600px일 때만 중괄호 내에 css 속성이 적용된다.}
 
-## CSS
+3. 이미지 에셋 세팅
+    - 감정 이미지들을 프로젝트에서 불러와 사용할 수 있는 환경 세팅
+    - <img src={process.env.PUBLIC_URL + '/assets/파일명'} />
+    - process.env.PUBLIC_URL 는 어떤 위치에 있든 /public 을 가리키게 됨
+    - 렌더가 되지 않을 때는 return문 위에 아래와 같이 입력한다.
+    - ```const env = process.env;``` ```env.PUBLIC_URL = env.PUBLIC_URL || "";```
+    
+4. 공통 컴포넌트 세팅
+    - 모든 페이지에 공통으로 사용되는 버튼, 헤더 컴포넌트 생성
+    - 유사하거나 똑같은 요소는 컴포넌트로 생성하여 재사용한다.
+    - UI요소가 어떤 기준으로 얼마만큼 변화하게 되는지를 발견해서 패턴화하는 것이 필요하다.
+    1. button
+        - 버튼의 색깔과 역할을 고려하기!
+        - 버튼이 가지게 될 prop을 정의하고 컴포넌트에 전달해주기
+    2. header
+        - 페이지별로 header를 가지며, 공통적인 사항이 발견됨
+        - header 컴포넌트는 leftChild / headText / rightChild 세가지 prop에 의해 변화되게 만들면 된다.
+        - prop을 전달할 때에는 컴포넌트 자체를 전달해도 된다. => 전달되는 prop의 개수를 줄일 수 있는 방법이다.
+        - ```<MyHeader leftChild={<MyButton prop={prop}/>} />```
+
+
 
