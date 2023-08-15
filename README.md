@@ -26,7 +26,7 @@
         - ex.
         ```
         const navigate = useNavigate();
-        <button onClick={() => {navigate('/home')}} >홈으로 이동</button>
+        <button onClick={() => {navigate('/home')} >홈으로 이동</button>
         ```
         
 ## 프로젝트 기초공사 1 (2023-08-15, 화)
