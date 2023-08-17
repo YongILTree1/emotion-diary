@@ -66,11 +66,13 @@
     - 프로젝트 전반적으로 사용될 일기 데이터 State 관리 로직 작성
     - 각각의 페이지에서 요구하는 데이터가 다름 이에 App.js 에서 일기 데이터를 관리할 수 있는 일기 데이터 State를 작성
     <App/>
-    |_<ReactRouter/>
-        |_<Home/> - 일기 리스트 데이터 필요
-        |_<New/> - 일기 생성 로직 필요
-        |_<Edit/> - 일기 수정 로직 필요
-        |_<Dairy/> - 일기 하나의 데이터 필요
+    <br/>
+        <ReactRouter/>
+        <br/>
+            <Home/> - 일기 리스트 데이터 필요<br/>
+            <New/> - 일기 생성 로직 필요<br/>
+            <Edit/> - 일기 수정 로직 필요<br/>
+            <Dairy/> - 일기 하나의 데이터 필요<br/>
 
 2. 프로젝트 State Context 세팅
     - 일기 데이터 State를 공급할 Context를 생성하고 Provider로 공급하기
